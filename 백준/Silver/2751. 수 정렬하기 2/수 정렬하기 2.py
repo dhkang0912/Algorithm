@@ -2,12 +2,12 @@ import sys
 input = sys.stdin.readline
 
 N = int(input())
-lst = []
-for _ in range(N):
-    i = int(input())
-    lst.append(i)
+lst = [0]*N
+for i in range(N):
+    j = int(input())
+    lst[i]=j
 lst.sort()
 # print(lst)
 
-for j in lst:
-    print(j)
+for z in lst:
+    print(z)
