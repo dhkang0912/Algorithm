@@ -13,13 +13,11 @@ for tc in range(1, N+1):
             stack.pop()
         elif len(stack) <= 0 and ele == ')':
             check = 0
-            break
+            
 
-    if check == 0:
-        print('NO')
-    elif len(stack) > 0 and check == 1:
-        print('NO')
-    elif len(stack) == 0 and check == 1:
+    if len(stack) == 0 and check == 1:
         print('YES')
+    else:
+        print('NO')
 
 
