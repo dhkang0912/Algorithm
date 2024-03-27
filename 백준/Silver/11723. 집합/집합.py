@@ -66,7 +66,7 @@ def make_set(order):
         if order == 'all':
             # for i in range(1,21):
             #     my_set.add(i)
-            my_set = set(i for i in range(1, 21))
+            my_set = set(range(1, 21))
         elif order == 'empty':
             my_set.clear()
 
