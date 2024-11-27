@@ -1,3 +1,8 @@
+# def solution(my_string, k):
+#     answer = ''.join(my_string for _ in range(k))
+#     return answer
+
 def solution(my_string, k):
-    answer = ''.join(my_string for _ in range(k))
+    answer = my_string * k
     return answer
+
