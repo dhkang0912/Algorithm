@@ -14,22 +14,30 @@ visited로 X 작업 방문 순서를 구하면 됨
 '''
 import sys 
 input = sys.stdin.readline
+sys.setrecursionlimit(10**6)
+
+# def dfs(node):
+#     stack = []
+#     stack.append(node)
+#     visited[node] = 1
+
+#     while stack:
+#         n = stack.pop()
+#         for i in graph[n]:
+#             if not visited[i]:
+#                 visited[i] = 1
+#                 stack.append(i)
 
 def dfs(node):
-    stack = []
-    stack.append(node)
     visited[node] = 1
-
-    while stack:
-        n = stack.pop()
-        for i in graph[n]:
-            if not visited[i]:
-                visited[i] = 1
-                stack.append(i)
+    for i in graph[node]:
+        if not visited[i]:
+            dfs(i)
     
 
 n, m = map(int, input().split())
 graph = [[] for _ in range(n+1)]
+# 도착하기 위해 방문한 곳만 알면 됨 => 방문한 곳을 모두 더하면 사전에 해야하는 작업 개수를 알 수 있음 (자기 개수, 0번째 개수 제외)
 visited = [0] * (n+1)
 
 # 0 사용 안함
